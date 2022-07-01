@@ -1,4 +1,4 @@
 Cow Counter
 
-University Assignment.
+University Assignment (Android Studio)
 Creating a Cow Counter Android Application to make farming more efficient.
