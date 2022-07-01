@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:screenOrientation="landscape"
+    >
+
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="52dp"
+        android:text="Cow Counter"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/breedET"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="221dp"
+        android:layout_marginEnd="69dp"
+        android:autofillHints='""'
+        android:ems="10"
+        android:hint="Breed"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:text="Breed"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        app:layout_constraintEnd_toStartOf="@+id/idET"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/idET"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="221dp"
+        android:autofillHints='""'
+        android:ems="10"
+        android:hint="id"
+        android:inputType="textPersonName"
+        android:text="ID"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/rejButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="221dp"
+        android:layout_marginBottom="4dp"
+        android:text="Add"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toStartOf="@+id/rejButton"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/rejButton"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="221dp"
+        android:text="rej"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addButton"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="290dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="20dp"
+        android:fillViewport="true"
+        android:isScrollContainer="false"
+        app:layout_constraintBottom_toTopOf="@+id/cowView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV">
+
+        <TableLayout
+            android:id="@+id/simpleTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1"> <!-- stretch the second column of the layout-->
+
+            <!-- first row of the table layout-->
+            <TableRow
+
+                android:id="@+id/firstRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <!-- first element of the row-->
+
+                <TextView
+
+                    android:id="@+id/simpleTextViewRight"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="#a6517e"
+                    android:padding="18dip"
+                    android:text="Breed"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/simpleTextViewLeft"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:background="#a6517e"
+                    android:padding="18dip"
+                    android:text="ID"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/cowView"
+        android:layout_width="98dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="1dp"
+        android:text="Cows: 0"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/clearButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="310dp"
+        android:layout_marginEnd="311dp"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
